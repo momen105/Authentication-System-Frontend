@@ -1,18 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Layout from "./layout/Main";
-
+import PrivateRoute from './utils/PrivateRoute'
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
+        <PrivateRoute >
           <Route path="/" element={< Layout />}>
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           </Route>
-        </Routes>
+        </PrivateRoute>
       </BrowserRouter>
     </div>
   );
